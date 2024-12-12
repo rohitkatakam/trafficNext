@@ -75,7 +75,7 @@ export default function ImageUpload() {
                 <img src={createObjectURL} alt="Upload" width={200} />
             )}
             {loading && <p>Making prediction, may take a minute...</p>}
-            {prediction && <p>Prediction: {classIdMap[prediction]}</p>}
+            {prediction && <p>Prediction: {classIdMap[Number(prediction)]}</p>}
         </div>
     );
 };
