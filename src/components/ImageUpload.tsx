@@ -1,6 +1,24 @@
 "use client"
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 
+const classIdMap: { [key: number]: string } = {
+    0: "Speed limit (5km/h)",
+    1: "Speed limit (40km/h)",
+    2: "Speed limit (60km/h)",
+    3: "Speed limit (80km/h)",
+    4: "Don't go left",
+    5: "Don't overtake from left",
+    6: "No car",
+    7: "No horn",
+    8: "Keep right",
+    9: "Watch out for cars",
+    10: "Bicycles crossing",
+    11: "Zebra Crossing",
+    12: "No stopping",
+    13: "No entry",
+    14: "Unknown",
+  };
+
 export default function ImageUpload() {
     // return a form that allows user to upload image
     // have an upload button and a confirm button
@@ -57,7 +75,7 @@ export default function ImageUpload() {
                 <img src={createObjectURL} alt="Upload" width={200} />
             )}
             {loading && <p>Making prediction, may take a minute...</p>}
-            {prediction && <p>Prediction: {prediction}</p>}
+            {prediction && <p>Prediction: {classIdMap[prediction]}</p>}
         </div>
     );
 };
